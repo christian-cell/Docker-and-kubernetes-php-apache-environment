@@ -27,6 +27,7 @@ To run in kubernetes
 after install kubectl and minikube start minikube cluster
 
 $ minikube start --vm-driver=<your virtual machine> ej
+  
 $ minikube start --vm-driver=virtualbox
 
 create the namespace lamp-dev 
