@@ -31,15 +31,19 @@ $ minikube start --vm-driver=<your virtual machine> ej
 $ minikube start --vm-driver=virtualbox
 
 create the namespace lamp-dev 
+  
 $ kubectl create namespace lam-dev
 
 move to lamp-dev
+  
 $ kubens lamp-dev
 
 and run
+  
 ./script.sh
 
 get a EXTERNAL IP with
+  
 $ minikube tunnel
 
 $ kubectl get svc
