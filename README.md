@@ -1,9 +1,13 @@
 To share and run the this php-apache backend application environment made in docker and kubernetes
 
 $ git clone https://github.com/christian-cell/Docker-and-kubernetes-php-apache-environment.git
+
 $ cd ejemplo-lamp-kubernetes
+
 $ docker build -t <name of your image:tag> .  "dont forget the point at the end"
+  
 $ docker tag <image-name:tag> <yourUserDockerHubName/image-name:tag>
+  
 $ docker push <yourUserDockerHubName/image-name:tag>
 
 pull your image
