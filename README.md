@@ -1,5 +1,7 @@
 To share and run the this php-apache backend application environment made in docker and kubernetes
 
+RUN
+
 $ git clone https://github.com/christian-cell/Docker-and-kubernetes-php-apache-environment.git
 
 $ cd ejemplo-lamp-kubernetes
