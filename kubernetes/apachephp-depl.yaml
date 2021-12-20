@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apachephp-deployment
+  namespace: lamp-dev
+  labels:
+    app: apache
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apachephp
+  template:
+    metadata:
+      labels:
+        app: apachephp
+    spec:
+      #terminationGracePeriodSeconds: 30
+      containers:
+        - name: apachephp
+          image: christianphp/my-php:1.0 #localhost:5000/apachephp:latest
+          imagePullPolicy: Always
+          env:
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_DATABASE
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD
+          ports:
+            - containerPort: 80
+              name: apachephp
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apachephp-service
+  namespace: lamp-dev
+spec:
+  selector:
+    app: apachephp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+  type: LoadBalancer
