@@ -12,7 +12,7 @@ $ docker pull <yourUserDockerHubName/image-name:tag>
 
 to run it in both directions . container ======> your host  , your host ======> container
 
-$ docker run -d --name <container-name> -p 80:80 -v $(pwd)/website://var/www/html/ <image-name>
+$ docker run -d --name <container-name> -p 80:80 -v $(pwd)/website:/var/www/html/ <image-name>
 
 
 
