@@ -1,4 +1,4 @@
-To share and run the backend application made in php in docker
+To share and run the this php-apache backend application environment made in docker and kubernetes
 
 $ git clone this repo
 $ cd ejemplo-lamp-kubernetes
