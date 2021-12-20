@@ -1,4 +1,4 @@
-To share and run the this php-apache backend application environment made in docker and kubernetes
+To share and run this php-apache backend application environment made in docker and kubernetes
 
 RUN
 
