@@ -48,4 +48,4 @@ $ minikube tunnel
 
 $ kubectl get svc
 
-copy external ip and pick in your browser
+copy external ip and PASTE in your browser
